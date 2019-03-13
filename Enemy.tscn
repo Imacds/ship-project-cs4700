@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="EnemyBody" type="KinematicBody2D"]
+position = Vector2( 499, 82 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="EnemyShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 37.6563
+
+[node name="Player" type="KinematicBody2D"]
+editor/display_folded = true
+position = Vector2( 500, 453 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 33 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2, 34 )
+texture = ExtResource( 1 )
+
