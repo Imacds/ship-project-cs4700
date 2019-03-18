@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Bullet.gd" type="Script" id=1]
+[ext_resource path="res://sprites/projectile2.svg" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="BulletBody" type="KinematicBody2D"]
-position = Vector2( 500, 151 )
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -12,4 +16,5 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
 
