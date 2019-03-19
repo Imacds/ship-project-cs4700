@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="PlayerShip" type="KinematicBody2D"]
+[node name="Ship" type="KinematicBody2D"]
 scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 1 )
 
