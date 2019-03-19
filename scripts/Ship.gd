@@ -19,6 +19,7 @@ func set_init_pos():
 
 func _physics_process(delta):
 	move(delta)
+	shoot(delta)
 	
 func move(delta):
 	var move_vec = Vector2()
@@ -37,3 +38,6 @@ func move(delta):
 	move_and_collide(new_pos)
 	position.x = clamp(position.x, 0 + ship_size.x, screen_size.x - ship_size.x)
 	position.y = clamp(position.y, 0 + ship_size.y, screen_size.y - ship_size.y)
+	
+func shoot(delta):
+	pass
