@@ -17,3 +17,39 @@ position = Vector2( 343.5, 290.25 )
 
 [node name="Ship" parent="." instance=ExtResource( 4 )]
 
+[node name="GUI" type="Control" parent="."]
+margin_right = 675.0
+margin_bottom = 900.0
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI"]
+margin_top = 839.0
+margin_right = 680.0
+margin_bottom = 899.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer"]
+margin_left = 100.0
+margin_right = 753.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+custom_constants/separation = 150
+
+[node name="ScoreLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
+margin_top = 23.0
+margin_right = 51.0
+margin_bottom = 37.0
+text = "Score: 0"
+
+[node name="LivesLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
+margin_left = 201.0
+margin_top = 23.0
+margin_right = 250.0
+margin_bottom = 37.0
+text = "Lives: 3"
+
+[node name="StageLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
+margin_left = 400.0
+margin_top = 23.0
+margin_right = 450.0
+margin_bottom = 37.0
+text = "Stage: 1"
+
