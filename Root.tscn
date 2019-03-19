@@ -16,5 +16,4 @@ position = Vector2( 331.41, 518.324 )
 position = Vector2( 343.5, 290.25 )
 
 [node name="PlayerShip" parent="." instance=ExtResource( 4 )]
-position = Vector2( 337, 800 )
 
