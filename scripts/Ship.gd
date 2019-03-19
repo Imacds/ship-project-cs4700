@@ -10,12 +10,14 @@ func _ready():
 	set_init_pos()
 	var shape = $CollisionShape2D.shape
 	ship_size = Vector2(shape.radius, shape.height)
-	print(ship_size)
 	
 func set_init_pos():
 	screen_size = OS.get_window_size()
-	var ship_init_pos = Vector2(screen_size.x / 2, screen_size.y - vertical_offset)
-	move_and_slide(ship_init_pos)
+	var ship_init_pos = Vector2(
+		screen_size.x / 2, 
+		screen_size.y - vertical_offset)
+#	move_and_slide(ship_init_pos)
+	position = ship_init_pos
 
 func _physics_process(delta):
 	move(delta)
