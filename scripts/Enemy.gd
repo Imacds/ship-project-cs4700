@@ -4,7 +4,6 @@ func _ready():
 	pass
 	
 func _on_Enemy_area_entered(area):
-	print('enter')
-	if area.get_name() == "Bullet":
+	if  "Bullet" in area.get_name():
 		area.queue_free()
 		queue_free()
