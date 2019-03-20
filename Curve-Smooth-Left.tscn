@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Curve-Smooth-Left.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0.641663, -1.37891, 0, 0, 0, 0, 82.4585, 14.2053, 0, 0, 0, 0, 158.431, 0.569092, 0, 0, 0, 0, 255.832, -46.1833, 0, 0, 0, 0, 318.169, -122.156, 0, 0, 0, 0, 370.765, -215.661, 0, 0, 0, 0, 388.298, -330.594, 0, 0, 0, 0, 403.882, -443.579, 0, 0, 0, 0, 417.518, -572.149, 0, 0, 0, 0, 413.622, -687.082, 0, 0, 0, 0, 405.83, -792.275 )
+}
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 0.641663, -1.37891 )
+rotation = 0.127577
+loop = false
+lookahead = 100.0
+
