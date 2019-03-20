@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 export (int) var speed = 600
 
@@ -13,4 +13,4 @@ func _process(delta):
 func move(delta):
 	var movement = Vector2()
 	movement.y -= 1
-	move_and_collide(movement * speed * delta)
+	translate(movement)

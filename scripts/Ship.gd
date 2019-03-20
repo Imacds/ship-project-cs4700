@@ -4,12 +4,19 @@ export (int) var speed = 300
 export (int) var vertical_offset = 100 # init offset
 var screen_size
 var ship_size
+var bullets_container
+var bullets_spawn
+var bullet_resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_init_pos()
 	var shape = $CollisionShape2D.shape
 	ship_size = Vector2(shape.radius, shape.height)
+	
+	bullets_container = get_parent().get_node("BulletsContainer")
+	bullets_spawn = get_node("BulletsSpawn")
+	bullet_resource = preload("../Bullet.tscn")
 	
 func set_init_pos():
 	screen_size = OS.get_window_size()
@@ -42,4 +49,9 @@ func move(delta):
 	position.y = clamp(position.y, 0 + ship_size.y, screen_size.y - ship_size.y)
 	
 func shoot(delta):
-	pass
+	if Input.is_action_just_pressed("shoot"):
+		var bullet = bullet_resource.instance()
+		bullet.global_position = bullets_spawn.global_position
+		bullet.z_index = 5
+		print(bullet.position)
+		bullets_container.add_child(bullet)
