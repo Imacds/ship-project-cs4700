@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.4222, 59.5505 )
 
-[node name="Area2D" type="Area2D"]
+[node name="Bullet" type="Area2D"]
 scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 1 )
 

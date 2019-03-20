@@ -13,4 +13,4 @@ func _process(delta):
 func move(delta):
 	var movement = Vector2()
 	movement.y -= 1
-	translate(movement)
+	translate(movement * speed * delta)

@@ -4,17 +4,17 @@
 [ext_resource path="res://sprites/ufodark.svg" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 241.128
 
-[node name="EnemyBody" type="KinematicBody2D"]
-scale = Vector2( 0.1, 0.1 )
+[node name="Enemy" type="Area2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="EnemyShape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
+[node name="EnemyShape" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]

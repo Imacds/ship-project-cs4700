@@ -12,11 +12,14 @@ script = ExtResource( 1 )
 
 [node name="BulletsContainer" parent="." instance=ExtResource( 2 )]
 
-[node name="Bullet" parent="." instance=ExtResource( 3 )]
-position = Vector2( 331.41, 518.324 )
+[node name="Bullet" parent="BulletsContainer" instance=ExtResource( 3 )]
+position = Vector2( 331.41, 628.324 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 343.5, 290.25 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 194.5, 290.25 )
 
 [node name="Ship" parent="." instance=ExtResource( 5 )]
 

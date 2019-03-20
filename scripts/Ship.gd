@@ -23,7 +23,7 @@ func set_init_pos():
 	var ship_init_pos = Vector2(
 		screen_size.x / 2, 
 		screen_size.y - vertical_offset)
-#	move_and_slide(ship_init_pos)
+
 	position = ship_init_pos
 
 func _physics_process(delta):
