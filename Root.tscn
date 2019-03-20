@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/game_settings.gd" type="Script" id=1]
 [ext_resource path="res://BulletsContainer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=5]
+[ext_resource path="res://EnemyController.gd" type="Script" id=6]
+[ext_resource path="res://SpawnController.gd" type="Script" id=7]
+[ext_resource path="res://SpawnSpot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://AttackController.gd" type="Script" id=9]
+[ext_resource path="res://HoldingController.gd" type="Script" id=10]
+
 
 [node name="Root" type="Node2D"]
 position = Vector2( 0, 0.773781 )
@@ -57,4 +63,47 @@ margin_top = 23.0
 margin_right = 450.0
 margin_bottom = 37.0
 text = "Stage: 1"
+
+[node name="EnemyController" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="SpawnController" type="Node" parent="EnemyController"]
+editor/display_folded = true
+script = ExtResource( 7 )
+
+[node name="SpawnSpotL4" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( -100, 800 )
+
+[node name="SpawnSpotR1" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( 800, 788.893 )
+
+[node name="SpawnSpotL2" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( -100, 600 )
+
+[node name="SpawnSpotR3" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( 800, 588.893 )
+
+[node name="SpawnSpotL3" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( -100, 700 )
+
+[node name="SpawnSpotR2" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( 800, 688.893 )
+
+[node name="SpawnSpotL1" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( -100, 500 )
+
+[node name="SpawnSpotR4" parent="EnemyController/SpawnController" instance=ExtResource( 8 )]
+position = Vector2( 800, 488.893 )
+
+[node name="AttackController" type="Node" parent="EnemyController"]
+script = ExtResource( 9 )
+
+[node name="HoldingController" type="Node2D" parent="EnemyController"]
+position = Vector2( 50, 50 )
+script = ExtResource( 10 )
+
+[node name="HoldingTween" type="Tween" parent="EnemyController/HoldingController"]
+
+
+
 
