@@ -4,6 +4,7 @@
 [ext_resource path="res://sprites/ufo.svg" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 25.4021
 
 [node name="Enemy1" type="Area2D"]
 script = ExtResource( 1 )
@@ -17,3 +18,4 @@ texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
+[connection signal="area_entered" from="." to="." method="_on_Enemy1_area_entered"]

@@ -7,6 +7,7 @@ enum {ATTACK, SPAWN}
 var enemies = []
 var state = SPAWN
 var counter = 0.0
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +37,8 @@ func _process(delta):
 			enemy.destroy()
 			destroy.append(enemy)
 	for d in destroy:
-		enemies.remove(d)
+		enemies.erase(d)
+		score += 1
 	
 	#For all extant enemies, forward them to the accurate systems
 	get_node("AttackController").attackList = []

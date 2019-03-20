@@ -13,6 +13,10 @@ var destroyed = false
 func _ready():
 	pass
 
+func _on_Enemy1_area_entered(area):
+	if  "Bullet" in area.get_name():
+		destroyed = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
