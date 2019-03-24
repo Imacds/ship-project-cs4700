@@ -9,7 +9,7 @@
 [ext_resource path="res://scripts/ExitButton.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
+size = 75
 outline_size = 10
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
@@ -37,7 +37,6 @@ func _on_CountdownTimer_timeout():
 
 [node name="RetryMenu" type="ColorRect"]
 pause_mode = 2
-visible = false
 margin_top = 279.0
 margin_right = 675.0
 margin_bottom = 619.0
@@ -51,7 +50,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Retry?"
+text = "Continue?"
 align = 1
 valign = 1
 

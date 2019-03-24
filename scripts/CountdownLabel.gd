@@ -18,7 +18,9 @@ func change_count(amount):
 	if count < 0:
 		exit_button.exit()
 	change_text(count)
-		
 	
 func change_text(text):
 	set_text(str(text))
+
+func stop_countdown():
+	$CountdownTimer.stop()
