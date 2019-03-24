@@ -6,7 +6,8 @@ var screen_size
 export (int) var speed = 300
 export (int) var vertical_offset = 100 # init offset
 var ship_size
-var lives = 3
+export (int) var init_lives = 3
+var lives = init_lives
 var invulnerability = 1.0
 export (float) var invulnerability_time = 2.0
 # shooting #
@@ -18,6 +19,9 @@ export (float) var time_between_shots = 0.35
 var bullets_container
 var bullets_spawn
 var bullet_resource
+# ref other objs #
+onready var retry_menu = get_parent().get_node("GUI/RetryMenu")
+onready var scene_root = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +32,7 @@ func _ready():
 	bullets_container = get_parent().get_node("BulletsContainer")
 	bullets_spawn = get_node("BulletsSpawn")
 	bullet_resource = preload("../Bullet.tscn")
+	present_retry_menu()
 	
 func set_init_pos():
 	screen_size = OS.get_window_size()
@@ -107,9 +112,10 @@ func die(killer):
 	if invulnerability <= 0.0:
 		lives -= 1
 		if lives <= 0:
-			queue_free()
+			present_retry_menu()
 		else:
 			invulnerability = invulnerability_time
 			
 func present_retry_menu():
-	pass
+	retry_menu.start_countdown()
+	scene_root.set_paused(true)
