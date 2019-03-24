@@ -101,9 +101,15 @@ func create_bullet(charged = false):
 
 func _on_Ship_area_entered(area):
 	if "Enemy1" in area.get_name():
-		if invulnerability <= 0.0:
-			lives -= 1
-			if lives <= 0:
-				queue_free()
-			else:
-				invulnerability = invulnerability_time
+		die(area)
+
+func die(killer):
+	if invulnerability <= 0.0:
+		lives -= 1
+		if lives <= 0:
+			queue_free()
+		else:
+			invulnerability = invulnerability_time
+			
+func present_retry_menu():
+	pass
