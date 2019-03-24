@@ -7,12 +7,13 @@ export (int) var speed = 300
 export (int) var vertical_offset = 100 # init offset
 var ship_size
 var lives = 3
-var invulnerability = 2.0
+var invulnerability = 1.0
+export (float) var invulnerability_time = 2.0
 # shooting #
 var charge_counter = 0.0 # duration that the fire button has been held
 var fire_cooldown = 0.0 # time since last fired
 export (float) var time_til_charged = 0.75
-export (float) var time_between_shots = 0.25
+export (float) var time_between_shots = 0.35
 # bullet #
 var bullets_container
 var bullets_spawn
@@ -46,7 +47,9 @@ func update_ship_colors(delta):
 		invulnerability -= delta
 		get_node("Sprite").modulate = Color(255, 255, 255)
 	elif charge_counter >= time_til_charged:
-		get_node("Sprite").modulate = Color(255, 1, 1)
+		$Sprite.modulate = Color.red
+	elif charge_counter >= 0.1:
+		$Sprite.modulate = $Sprite.modulate.linear_interpolate(Color.orangered, delta) 
 	else:
 		get_node("Sprite").modulate = Color(1, 1, 1)
 	
@@ -103,4 +106,4 @@ func _on_Ship_area_entered(area):
 			if lives <= 0:
 				queue_free()
 			else:
-				invulnerability = 2.0
+				invulnerability = invulnerability_time
