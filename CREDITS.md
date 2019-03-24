@@ -11,7 +11,6 @@ Imported assets
 | sprite | Space Starter Kit | CruzR | https://opengameart.org/content/space-starter-kit |
 | font | Xirod Font | Raymond Larabie | https://www.1001fonts.com/xirod-font.html |
 
-
 Developers and Designers:
 
 Jakub, Indigo, James (jtara1)

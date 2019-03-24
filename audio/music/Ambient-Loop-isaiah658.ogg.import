@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ambient-Loop-isaiah658.ogg-bd3417c2c022deccfbf6c3c31f444dbb.oggstr"
+
+[deps]
+
+source_file="res://audio/music/Ambient-Loop-isaiah658.ogg"
+dest_files=[ "res://.import/Ambient-Loop-isaiah658.ogg-bd3417c2c022deccfbf6c3c31f444dbb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
