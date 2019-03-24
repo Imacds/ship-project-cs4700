@@ -15,6 +15,7 @@ var charge_counter = 0.0 # duration that the fire button has been held
 var fire_cooldown = 0.0 # time since last fired
 export (float) var time_til_charged = 0.75
 export (float) var time_between_shots = 0.35
+var charged_audio_played = false
 # bullet #
 var bullets_container
 var bullets_spawn
@@ -86,11 +87,15 @@ func shoot(delta):
 		
 	elif Input.is_action_pressed("shoot"):
 		charge_counter += delta
+		if charge_counter >= time_til_charged and not charged_audio_played:
+			charged_audio_played = true
+			$ShipIsChargedAudio.play()
 
 	elif Input.is_action_just_released("shoot") and charge_counter >= time_til_charged:
 		create_bullet(true)
 		fire_cooldown = 0.0
 		charge_counter = 0.0
+		charged_audio_played = false
 
 func create_bullet(charged = false):
 	# create the instance of the bullet & change its pos
