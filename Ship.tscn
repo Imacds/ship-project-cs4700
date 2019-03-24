@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
 [ext_resource path="res://sprites/starshipdark.svg" type="Texture" id=2]
+[ext_resource path="res://audio/sfx/tir (shot).ogg" type="AudioStream" id=3]
+[ext_resource path="res://audio/sfx/space laser (charge shot).wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 11.826
@@ -29,5 +31,15 @@ scale = Vector2( 0.1, 0.1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 1.5, 0.9 )
 shape = SubResource( 2 )
+
+[node name="ShotFiredAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 337.5, 450 )
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="ChargedShotFiredAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 337.5, 450 )
+stream = ExtResource( 4 )
+volume_db = -10.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Ship_area_entered"]

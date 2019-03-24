@@ -93,12 +93,15 @@ func shoot(delta):
 		charge_counter = 0.0
 
 func create_bullet(charged = false):
+	# create the instance of the bullet & change its pos
 	var bullet = bullet_resource.instance()
 	bullet.global_position = bullets_spawn.global_position
 	bullets_container.add_child(bullet)
 	
+	$ChargedShotFiredAudio.play() if charged else $ShotFiredAudio.play() # play audio
+	
 	bullet.charged = charged
-	if charged:
+	if charged: # change color and speed if charged
 		bullet.get_node("Sprite").modulate = Color(255, 1, 1)
 		bullet.speed = 800
 	return bullet
