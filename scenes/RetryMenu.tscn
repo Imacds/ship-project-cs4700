@@ -37,6 +37,7 @@ func _on_CountdownTimer_timeout():
 
 [node name="RetryMenu" type="ColorRect"]
 pause_mode = 2
+visible = false
 margin_top = 279.0
 margin_right = 675.0
 margin_bottom = 619.0

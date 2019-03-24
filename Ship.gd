@@ -32,7 +32,6 @@ func _ready():
 	bullets_container = get_parent().get_node("BulletsContainer")
 	bullets_spawn = get_node("BulletsSpawn")
 	bullet_resource = preload("../Bullet.tscn")
-	present_retry_menu()
 	
 func set_init_pos():
 	screen_size = OS.get_window_size()
