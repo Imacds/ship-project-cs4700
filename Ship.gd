@@ -39,11 +39,13 @@ func set_init_pos():
 func _physics_process(delta):
 	move(delta)
 	shoot(delta)
+	update_ship_colors(delta)
 	
+func update_ship_colors(delta):
 	if invulnerability > 0.0:
 		invulnerability -= delta
 		get_node("Sprite").modulate = Color(255, 255, 255)
-	elif(charge_counter >= 1.5):
+	elif charge_counter >= time_til_charged:
 		get_node("Sprite").modulate = Color(255, 1, 1)
 	else:
 		get_node("Sprite").modulate = Color(1, 1, 1)
