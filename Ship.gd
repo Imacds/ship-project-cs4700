@@ -51,18 +51,18 @@ func update_ship_colors(delta):
 	if invulnerability > 0.0:
 		invulnerability -= delta
 		get_node("AnimatedSprite").modulate = Color(255, 255, 255)
-	elif charge_counter >= time_til_charged:
+	elif charge_counter >= time_til_charged and global.isNotGalagaClone:
 		$AnimatedSprite.modulate = Color.red
-	elif charge_counter >= 0.1:
+	elif charge_counter >= 0.1 and global.isNotGalagaClone:
 		$AnimatedSprite.modulate = $AnimatedSprite.modulate.linear_interpolate(Color.orangered, delta) 
 	else:
 		get_node("AnimatedSprite").modulate = Color(1, 1, 1)
 	
 func move(delta):
 	var move_vec = Vector2()
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("move_down") and global.isNotGalagaClone:
 		move_vec.y += 1
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("move_up") and global.isNotGalagaClone:
 		move_vec.y -= 1
 	if Input.is_action_pressed("move_left"):
 		move_vec.x -= 1
@@ -87,11 +87,11 @@ func shoot(delta):
 		
 	elif Input.is_action_pressed("shoot"):
 		charge_counter += delta
-		if charge_counter >= time_til_charged and not charged_audio_played:
+		if charge_counter >= time_til_charged and not charged_audio_played and global.isNotGalagaClone:
 			charged_audio_played = true
 			$ShipIsChargedAudio.play()
 
-	elif Input.is_action_just_released("shoot") and charge_counter >= time_til_charged:
+	elif Input.is_action_just_released("shoot") and charge_counter >= time_til_charged and global.isNotGalagaClone:
 		create_bullet(true)
 		fire_cooldown = 0.0
 		charge_counter = 0.0

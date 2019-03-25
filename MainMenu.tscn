@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/BulletSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ChargedBulletSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/music/Ambient-Loop-isaiah658.ogg" type="AudioStream" id=3]
 [ext_resource path="res://fonts/xirod_dynamic_font_32.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=5]
-[ext_resource path="res://scripts/StartDerivedGameEndless.gd" type="Script" id=6]
-[ext_resource path="res://scripts/QuitButton.gd" type="Script" id=7]
-[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=8]
-[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=9]
+[ext_resource path="res://StartCloneGameButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=6]
+[ext_resource path="res://scripts/StartDerivedGameEndless.gd" type="Script" id=7]
+[ext_resource path="res://scripts/QuitButton.gd" type="Script" id=8]
+[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=9]
+[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=10]
 
 [node name="Node" type="Node"]
 
@@ -51,6 +52,7 @@ margin_right = 641.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 4 )
 text = "Galaga Clone"
+script = ExtResource( 5 )
 
 [node name="StartDerivedGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 55.0
@@ -58,7 +60,7 @@ margin_right = 641.0
 margin_bottom = 100.0
 custom_fonts/font = ExtResource( 4 )
 text = "Just Ship It - Adventure"
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="StartDerivedGameEndless" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 110.0
@@ -66,7 +68,7 @@ margin_right = 641.0
 margin_bottom = 155.0
 custom_fonts/font = ExtResource( 4 )
 text = "Just Ship It - Endless"
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="QuitButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 165.0
@@ -74,32 +76,32 @@ margin_right = 641.0
 margin_bottom = 210.0
 custom_fonts/font = ExtResource( 4 )
 text = "Quit"
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
 margin_top = 710.0
 margin_right = 641.0
 margin_bottom = 775.0
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
 margin_right = 641.0
 margin_bottom = 19.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
 text = "Score Required: 500"
 
 [node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
 margin_top = 23.0
 margin_right = 641.0
 margin_bottom = 42.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
 text = "Previous Score: 0"
 
 [node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
 margin_top = 46.0
 margin_right = 641.0
 margin_bottom = 65.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
 text = "High Score: 0"
 
 [connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_QuitButton_pressed"]
