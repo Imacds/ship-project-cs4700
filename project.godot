@@ -22,7 +22,8 @@ config/icon="res://sprites/icon.png"
 
 [autoload]
 
-global="*res://scripts/global.gd"
+global="*res://scripts/globals/global.gd"
+utils="*res://scripts/globals/utils.gd"
 
 [display]
 

@@ -1,8 +1,9 @@
 extends Button
 
+onready var enemy_controller = $"../../../EnemyController"
+
 func _on_ExitButton_pressed():
 	exit()
 	
 func exit():
-	get_tree().paused = false
-	get_tree().change_scene("res://MainMenu.tscn")
+	global.change_scene("main menu", enemy_controller.score)
