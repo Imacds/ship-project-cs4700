@@ -1,5 +1,6 @@
 # my ignores
 bin/
+.orig # from merge conflicts
 
 # Godot-specific ignores
 .import/
