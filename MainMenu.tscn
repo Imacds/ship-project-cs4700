@@ -42,19 +42,19 @@ margin_right = 658.479
 margin_bottom = 825.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/MarginContainer"]
-margin_right = 641.0
-margin_bottom = 1830.0
+margin_right = 735.0
+margin_bottom = 775.0
 custom_constants/separation = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
-editor/display_folded = true
-margin_right = 641.0
+margin_right = 735.0
+margin_bottom = 446.0
 margin_bottom = 210.0
 custom_constants/separation = 10
 alignment = 1
 
 [node name="StartCloneGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
-margin_right = 641.0
+margin_right = 735.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 5 )
 text = "Galaga Clone"
@@ -62,7 +62,7 @@ script = ExtResource( 6 )
 
 [node name="StartDerivedGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 55.0
-margin_right = 641.0
+margin_right = 735.0
 margin_bottom = 100.0
 custom_fonts/font = ExtResource( 5 )
 text = "Just Ship It - Adventure"
@@ -70,7 +70,7 @@ script = ExtResource( 7 )
 
 [node name="StartDerivedGameEndless" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 110.0
-margin_right = 641.0
+margin_right = 735.0
 margin_bottom = 155.0
 custom_fonts/font = ExtResource( 5 )
 text = "Just Ship It - Endless"
@@ -78,7 +78,7 @@ script = ExtResource( 8 )
 
 [node name="QuitButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 165.0
-margin_right = 641.0
+margin_right = 735.0
 margin_bottom = 210.0
 custom_fonts/font = ExtResource( 5 )
 text = "Quit"
@@ -87,7 +87,7 @@ script = ExtResource( 9 )
 [node name="HelpLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2"]
 margin_left = 30.0
 margin_top = 310.0
-margin_right = 641.0
+margin_right = 735.0
 margin_bottom = 395.0
 custom_fonts/font = ExtResource( 10 )
 text = "Controls:
@@ -98,28 +98,28 @@ Hold Space - Charge Super Shot"
 [node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
 margin_left = 30.0
 margin_top = 495.0
-margin_right = 641.0
-margin_bottom = 560.0
+margin_right = 735.0
+margin_bottom = 446.0
 script = ExtResource( 11 )
 
 [node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
-margin_right = 611.0
-margin_bottom = 19.0
+margin_right = 641.0
+margin_bottom = 85.0
 custom_fonts/font = ExtResource( 10 )
 text = "Score Required: 500000"
 script = ExtResource( 12 )
 
 [node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
-margin_top = 23.0
-margin_right = 611.0
-margin_bottom = 42.0
+margin_top = 89.0
+margin_right = 641.0
+margin_bottom = 108.0
 custom_fonts/font = ExtResource( 10 )
 text = "Previous Score: 0"
 
 [node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
-margin_top = 46.0
-margin_right = 611.0
-margin_bottom = 65.0
+margin_top = 112.0
+margin_right = 735.0
+margin_bottom = 131.0
 custom_fonts/font = ExtResource( 10 )
 text = "High Score: 0"
 
