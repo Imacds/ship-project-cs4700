@@ -38,7 +38,7 @@ func _process(delta):
 			destroy.append(enemy)
 	for d in destroy:
 		enemies.erase(d)
-		score += 1
+		score += 1000
 	
 	#For all extant enemies, forward them to the accurate systems
 	get_node("AttackController").attackList = []

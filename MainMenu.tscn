@@ -8,8 +8,8 @@
 [ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=6]
 [ext_resource path="res://scripts/StartDerivedGameEndless.gd" type="Script" id=7]
 [ext_resource path="res://scripts/QuitButton.gd" type="Script" id=8]
-[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=9]
-[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=10]
+[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=10]
 
 [node name="Node" type="Node"]
 
@@ -38,12 +38,12 @@ margin_bottom = 825.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/MarginContainer"]
 margin_right = 641.0
-margin_bottom = 775.0
+margin_bottom = 1382.0
 custom_constants/separation = 500
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
 margin_right = 641.0
-margin_bottom = 210.0
+margin_bottom = 380.0
 custom_constants/separation = 10
 alignment = 1
 
@@ -78,30 +78,44 @@ custom_fonts/font = ExtResource( 4 )
 text = "Quit"
 script = ExtResource( 8 )
 
-[node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
-margin_top = 710.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 220.0
 margin_right = 641.0
-margin_bottom = 775.0
-script = ExtResource( 9 )
+margin_bottom = 305.0
 
-[node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer2"]
+margin_right = 641.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 9 )
+text = "Controls:
+WASD/Arrow Keys - Move
+Space - Fire
+Hold Space - Charge Super Shot"
+
+[node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 315.0
+margin_right = 641.0
+margin_bottom = 380.0
+script = ExtResource( 10 )
+
+[node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/ScoresVBox"]
 margin_right = 641.0
 margin_bottom = 19.0
-custom_fonts/font = ExtResource( 10 )
-text = "Score Required: 500"
+custom_fonts/font = ExtResource( 9 )
+text = "Score Required: 500000"
 
-[node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/ScoresVBox"]
 margin_top = 23.0
 margin_right = 641.0
 margin_bottom = 42.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 9 )
 text = "Previous Score: 0"
 
-[node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/ScoresVBox"]
 margin_top = 46.0
 margin_right = 641.0
 margin_bottom = 65.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 9 )
 text = "High Score: 0"
 
 [connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_QuitButton_pressed"]
