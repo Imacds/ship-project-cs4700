@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://BulletsContainer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/xirod_dynamic_font_9.tres" type="DynamicFont" id=4]
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=5]
 [ext_resource path="res://LivesLabel.gd" type="Script" id=6]
 [ext_resource path="res://StageLabel.gd" type="Script" id=7]
@@ -30,39 +30,39 @@ margin_right = 675.0
 margin_bottom = 900.0
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI"]
-margin_left = 40.0
-margin_top = 829.226
+margin_left = 80.0
+margin_top = 790.0
 margin_right = 675.0
-margin_bottom = 894.226
+margin_bottom = 899.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer"]
-margin_right = 635.0
-margin_bottom = 65.0
+margin_right = 595.0
+margin_bottom = 109.0
 size_flags_horizontal = 3
 custom_constants/separation = 150
 
 [node name="ScoreLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
-margin_top = 23.0
-margin_right = 102.0
-margin_bottom = 42.0
+margin_top = 48.0
+margin_right = 61.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 4 )
 text = "Score: 0"
 script = ExtResource( 5 )
 
 [node name="LivesLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
-margin_left = 252.0
-margin_top = 23.0
-margin_right = 341.0
-margin_bottom = 42.0
+margin_left = 211.0
+margin_top = 48.0
+margin_right = 266.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 4 )
 text = "Lives: 3"
 script = ExtResource( 6 )
 
 [node name="StageLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
-margin_left = 491.0
-margin_top = 23.0
-margin_right = 583.0
-margin_bottom = 42.0
+margin_left = 416.0
+margin_top = 48.0
+margin_right = 472.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 4 )
 text = "Stage: 1"
 script = ExtResource( 7 )
