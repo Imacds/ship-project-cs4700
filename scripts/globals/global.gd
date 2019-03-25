@@ -4,6 +4,7 @@ extends Node
 
 # score #
 var score_required_to_unlock_boss = 500
+var score_required_to_unlock_boss_default = score_required_to_unlock_boss
 var previous_score = 0
 var scores = []
 var highscore = 0
