@@ -3,7 +3,7 @@
 Imported assets
 
 | Type | Name | Author | URL | In-Game Usage |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | audio | tir | farfadet46 | https://opengameart.org/content/laser-fire-0 | ship shot sfx |
 | audio | space laser | bart | https://opengameart.org/content/space-laser | ship charged shot sfx |
 | audio | buzz-grid-sounds-wav | claudeb | https://opengameart.org/content/buzz-grid-sounds | ship is charged sfx, star boss fires fireballs sfx |
