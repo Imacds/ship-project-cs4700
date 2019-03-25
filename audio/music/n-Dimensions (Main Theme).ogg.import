@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/n-Dimensions (Main Theme).ogg-b4b6dcde8f1f5048927341208fb20b13.oggstr"
+
+[deps]
+
+source_file="res://audio/music/n-Dimensions (Main Theme).ogg"
+dest_files=[ "res://.import/n-Dimensions (Main Theme).ogg-b4b6dcde8f1f5048927341208fb20b13.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

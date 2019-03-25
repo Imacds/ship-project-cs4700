@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
-[ext_resource path="res://sprites/ProposedGraphics/ship0.png" type="Texture" id=2]
-[ext_resource path="res://sprites/ProposedGraphics/ship1.png" type="Texture" id=3]
-[ext_resource path="res://sprites/ProposedGraphics/ship2.png" type="Texture" id=4]
-[ext_resource path="res://sprites/ProposedGraphics/ship3.png" type="Texture" id=5]
+[ext_resource path="res://audio/sfx/tir (shot).ogg" type="AudioStream" id=2]
+[ext_resource path="res://audio/sfx/space laser (charge shot).wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/sfx/bzzzt (ship is charged).wav" type="AudioStream" id=4]
+[ext_resource path="res://sprites/ProposedGraphics/ship0.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ProposedGraphics/ship1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/ProposedGraphics/ship2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/ProposedGraphics/ship3.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 11.826
@@ -14,7 +17,7 @@ radius = 11.826
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -37,10 +40,22 @@ scale = Vector2( 0.1, 0.1 )
 scale = Vector2( 1.5, 0.9 )
 shape = SubResource( 2 )
 
+[node name="ShotFiredAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 337.5, 450 )
+stream = ExtResource( 2 )
+volume_db = -2.0
+
+[node name="ChargedShotFiredAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 337.5, 450 )
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="ShipIsChargedAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 337.5, 450 )
+stream = ExtResource( 4 )
+volume_db = -5.0
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 3 )
-frame = 1
-playing = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Ship_area_entered"]

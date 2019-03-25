@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/space laser (charge shot).wav-7d2d88f2c71972153881df574194d34f.sample"
+
+[deps]
+
+source_file="res://audio/sfx/space laser (charge shot).wav"
+dest_files=[ "res://.import/space laser (charge shot).wav-7d2d88f2c71972153881df574194d34f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/RetryMenu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/xirod.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/CountdownLabel.gd" type="Script" id=3]
+[ext_resource path="res://audio/sfx/beep (countdown timer).wav" type="AudioStream" id=4]
+[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scripts/RetryButton.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ExitButton.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Timer
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func _on_CountdownTimer_timeout():
+	print('timer done')
+"
+
+[node name="RetryMenu" type="ColorRect"]
+pause_mode = 2
+visible = false
+margin_top = 279.0
+margin_right = 675.0
+margin_bottom = 619.0
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="RetryLabel" type="Label" parent="."]
+margin_right = 675.0
+margin_bottom = 150.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Continue?"
+align = 1
+valign = 1
+
+[node name="CountdownLabel" type="Label" parent="."]
+margin_left = 190.0
+margin_top = 130.0
+margin_right = 504.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "10"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CountdownLabel"]
+position = Vector2( -190, -130 )
+stream = ExtResource( 4 )
+
+[node name="CountdownTimer" type="Timer" parent="CountdownLabel"]
+script = SubResource( 3 )
+
+[node name="RetryButton" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 200.0
+margin_right = 310.0
+margin_bottom = 260.0
+custom_fonts/font = ExtResource( 5 )
+text = "Yes"
+script = ExtResource( 6 )
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 380.0
+margin_top = 200.226
+margin_right = 540.0
+margin_bottom = 260.226
+custom_fonts/font = ExtResource( 5 )
+text = "No"
+script = ExtResource( 7 )
+
+[connection signal="timeout" from="CountdownLabel/CountdownTimer" to="CountdownLabel" method="_on_CountdownTimer_timeout"]
+[connection signal="pressed" from="RetryButton" to="RetryButton" method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]

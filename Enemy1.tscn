@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/ProposedGraphics/ufo1.png" type="Texture" id=2]
+[ext_resource path="res://audio/sfx/ding2 (enemy destroyed.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.4021
@@ -17,5 +18,8 @@ scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="area_entered" from="." to="." method="_on_Enemy1_area_entered"]

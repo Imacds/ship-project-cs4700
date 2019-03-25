@@ -1,25 +1,27 @@
 extends Node
 
 # Const and enum variable declarations:
-enum {ATTACK, SPAWN} 
+enum {ATTACK, SPAWN, STOP} 
 
 # Member variable declarations:
 var enemies = []
 var state = SPAWN
 var counter = 0.0
 var score = 0
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+onready var bossController = $"../BossController"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	counter += delta
+	if state != STOP and score >= global.score_required_to_unlock_boss:
+		state = STOP
+		bossController.spawn()
 	
 	#Basic game rules: attack every 10 seconds, spawn every 10 seconds, with the two offset by 5 seconds.
 	if counter > 5.0:
-		if state == ATTACK:
+		if state == STOP:
+			pass
+		elif state == ATTACK:
 			get_node("AttackController").attackRandom()
 			state = SPAWN
 			counter = 0.0
@@ -27,8 +29,6 @@ func _process(delta):
 			get_node("SpawnController").spawnRandom()
 			state = ATTACK
 			counter = 0.0
-		else:
-			printerr("Illegal state reached in EnemyController")
 			
 	var destroy = []
 	#Purge the list of all enemies that have been flagged to be deleted

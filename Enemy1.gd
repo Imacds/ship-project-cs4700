@@ -8,10 +8,9 @@ var state = STATE.RAIL
 var oldPos = get_transform().get_origin()
 var teleport = false
 var destroyed = false
-var powerup_resource
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	powerup_resource = preload("../Powerup.tscn")
 	pass
 
 func _on_Enemy1_area_entered(area):
@@ -41,15 +40,9 @@ func tween(var target):
 	tween.start()
 	
 func destroy():
-	#spawnPowerup()
 	if state == STATE.RAIL:
 		get_parent().get_parent().queue_free()
 	elif state == STATE.REQUEST_HOLDING:
 		get_parent().get_parent().queue_free()
 	elif state == STATE.HOLDING:
 		queue_free()
-
-func spawnPowerup():
-	var powerup = powerup_resource.instance()
-	powerup.global_position = global_position
-	get_tree().get_root().add_child(powerup)
