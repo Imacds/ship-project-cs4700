@@ -20,6 +20,10 @@ run/main_scene="res://Root.tscn"
 boot_splash/fullsize=false
 config/icon="res://sprites/icon.png"
 
+[autoload]
+
+global="*res://scripts/global.gd"
+
 [display]
 
 window/size/width=675

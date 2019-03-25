@@ -10,7 +10,7 @@ var spawnSpotsRight = []
 
 var spotCounter = 0
 var sideCounter = 0
-var wave = 1
+var wave = 14
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -8,13 +8,12 @@ var enemies = []
 var state = SPAWN
 var counter = 0.0
 var score = 0
-export (int) var goalScore = 0
 onready var bossController = $"../BossController"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	counter += delta
-	if state != STOP and score >= goalScore:
+	if state != STOP and score >= global.score_required_to_unlock_boss:
 		state = STOP
 		bossController.spawn()
 	
