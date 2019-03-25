@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/RetryMenu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/xirod.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/CountdownLabel.gd" type="Script" id=3]
-[ext_resource path="res://audio/sfx/beep.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/sfx/beep (countdown timer).wav" type="AudioStream" id=4]
 [ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scripts/RetryButton.gd" type="Script" id=6]
 [ext_resource path="res://scripts/ExitButton.gd" type="Script" id=7]

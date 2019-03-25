@@ -1,74 +1,93 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://fonts/xirod_dynamic_font_32.tres" type="DynamicFont" id=1]
-[ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=2]
-[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=3]
-[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=4]
-[ext_resource path="res://audio/music/Ambient-Loop-isaiah658.ogg" type="AudioStream" id=5]
+[ext_resource path="res://scenes/BulletSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ChargedBulletSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/music/Ambient-Loop-isaiah658.ogg" type="AudioStream" id=3]
+[ext_resource path="res://fonts/xirod_dynamic_font_32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=6]
+[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=7]
 
-[node name="MainMenu" type="Control"]
+[node name="Node" type="Node"]
+
+[node name="BulletSpawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, 930 )
+z_index = 1
+
+[node name="ChargedBulletSpawner" parent="." instance=ExtResource( 2 )]
+position = Vector2( 620, 930 )
+z_index = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 337.5, 450 )
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="MainMenu" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 margin_left = 100.0
 margin_top = 50.0
 margin_right = 575.0
 margin_bottom = 800.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/MarginContainer"]
 margin_right = 475.0
 margin_bottom = 750.0
 custom_constants/separation = 500
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
 margin_right = 475.0
 margin_bottom = 155.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="StartCloneGameButton" type="MenuButton" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="StartCloneGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_right = 475.0
 margin_bottom = 45.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Galaga Clone"
 
-[node name="StartDerivedGameButton" type="MenuButton" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="StartDerivedGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 55.0
 margin_right = 475.0
 margin_bottom = 100.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Just Ship It"
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
-[node name="QuitButton" type="MenuButton" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="QuitButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 110.0
 margin_right = 475.0
 margin_bottom = 155.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Quit"
 
-[node name="ScoresVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+[node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
 margin_top = 655.0
 margin_right = 475.0
-margin_bottom = 697.0
-script = ExtResource( 3 )
+margin_bottom = 720.0
+script = ExtResource( 6 )
 
-[node name="PreviousScoreLabel" type="Label" parent="MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
 margin_right = 475.0
 margin_bottom = 19.0
-custom_fonts/font = ExtResource( 4 )
-text = "Previous Score: 0"
+custom_fonts/font = ExtResource( 7 )
+text = "Score Required: 500"
 
-[node name="HighscoreLabel" type="Label" parent="MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
 margin_top = 23.0
 margin_right = 475.0
 margin_bottom = 42.0
-custom_fonts/font = ExtResource( 4 )
-text = "High Score: 0"
+custom_fonts/font = ExtResource( 7 )
+text = "Previous Score: 0"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 337.5, 450 )
-stream = ExtResource( 5 )
-autoplay = true
+[node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+margin_top = 46.0
+margin_right = 475.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 7 )
+text = "High Score: 0"
 

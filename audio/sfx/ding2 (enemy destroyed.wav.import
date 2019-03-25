@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ding2 (enemy destroyed.wav-1be0028661481601e892e2ee71831703.sample"
+
+[deps]
+
+source_file="res://audio/sfx/ding2 (enemy destroyed.wav"
+dest_files=[ "res://.import/ding2 (enemy destroyed.wav-1be0028661481601e892e2ee71831703.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

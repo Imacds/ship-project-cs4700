@@ -8,7 +8,7 @@ var previous_score = 0
 var scores = []
 var highscore = 0
 # scene #
-var scenes = {"main menu": "res:///MainMenu.tscn", "game": "res:///Root.tscn"} 
+var scenes = {"main menu": "res://MainMenu.tscn", "game": "res://Root.tscn"} 
 
 func get_highscore():
 	var highest = 0

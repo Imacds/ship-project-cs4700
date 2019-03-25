@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beep (countdown timer).wav-5a6403a3392157b6b30f21d132695021.sample"
+
+[deps]
+
+source_file="res://audio/sfx/beep (countdown timer).wav"
+dest_files=[ "res://.import/beep (countdown timer).wav-5a6403a3392157b6b30f21d132695021.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
