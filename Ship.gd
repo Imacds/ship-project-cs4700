@@ -45,13 +45,13 @@ func _physics_process(delta):
 func update_ship_colors(delta):
 	if invulnerability > 0.0:
 		invulnerability -= delta
-		get_node("Sprite").modulate = Color(255, 255, 255)
+		get_node("AnimatedSprite").modulate = Color(255, 255, 255)
 	elif charge_counter >= time_til_charged:
-		$Sprite.modulate = Color.red
+		$AnimatedSprite.modulate = Color.red
 	elif charge_counter >= 0.1:
-		$Sprite.modulate = $Sprite.modulate.linear_interpolate(Color.orangered, delta) 
+		$AnimatedSprite.modulate = $AnimatedSprite.modulate.linear_interpolate(Color.orangered, delta) 
 	else:
-		get_node("Sprite").modulate = Color(1, 1, 1)
+		get_node("AnimatedSprite").modulate = Color(1, 1, 1)
 	
 func move(delta):
 	var move_vec = Vector2()
