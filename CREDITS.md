@@ -12,6 +12,7 @@ Imported assets
 | audio | N-Dimensions (Main Theme) | Matthew Pablo | https://opengameart.org/content/space-dimensions-techno-version | boss music |
 | audio | Szymon Matuszewski - Space Chase | Szymon Matuszewski | https://opengameart.org/content/szymon-matuszewski-space-chase | normal enemy fighting music |
 | sprite | Space Starter Kit | CruzR | https://opengameart.org/content/space-starter-kit | ship, enemies, laser shots |
+| sprite | sss (Star-Vector) | galangpiliang | https://opengameart.org/content/star-vector | boss |
 | font | Xirod Font | Raymond Larabie | https://www.1001fonts.com/xirod-font.html | general fonts |
 
 Developers and Designers:

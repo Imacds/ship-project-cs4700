@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://BulletsContainer.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://AttackController.gd" type="Script" id=11]
 [ext_resource path="res://HoldingController.gd" type="Script" id=12]
 [ext_resource path="res://audio/music/Szymon Matuszewski - Space Chase.ogg" type="AudioStream" id=13]
+[ext_resource path="res://scripts/BossController.gd" type="Script" id=14]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 0, 0.773781 )
@@ -113,4 +114,7 @@ script = ExtResource( 12 )
 position = Vector2( 337.5, 450 )
 stream = ExtResource( 13 )
 autoplay = true
+
+[node name="BossController" type="Node" parent="."]
+script = ExtResource( 14 )
 
