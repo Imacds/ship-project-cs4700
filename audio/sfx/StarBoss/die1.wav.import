@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/die1.wav-e38e61e8215800330f3105fde4d6c39d.sample"
+
+[deps]
+
+source_file="res://audio/sfx/StarBoss/die1.wav"
+dest_files=[ "res://.import/die1.wav-e38e61e8215800330f3105fde4d6c39d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -112,7 +112,7 @@ func create_bullet(charged = false):
 	return bullet
 
 func _on_Ship_area_entered(area):
-	if "Enemy1" in area.get_name():
+	if "Enemy1" in area.get_name() or "Fireball" in area.get_name():
 		die(area)
 
 func die(killer):

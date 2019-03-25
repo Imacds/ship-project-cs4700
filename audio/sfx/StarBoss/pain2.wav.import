@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pain2.wav-21ccdb0ca1d082d935b4c0ed4c58e2a6.sample"
+
+[deps]
+
+source_file="res://audio/sfx/StarBoss/pain2.wav"
+dest_files=[ "res://.import/pain2.wav-21ccdb0ca1d082d935b4c0ed4c58e2a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

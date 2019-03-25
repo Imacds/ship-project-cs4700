@@ -118,3 +118,5 @@ autoplay = true
 [node name="BossController" type="Node" parent="."]
 script = ExtResource( 14 )
 
+[node name="FireballContainer" type="Node" parent="."]
+
