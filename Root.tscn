@@ -1,19 +1,20 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://BulletsContainer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ScoreLabel.gd" type="Script" id=4]
-[ext_resource path="res://LivesLabel.gd" type="Script" id=5]
-[ext_resource path="res://StageLabel.gd" type="Script" id=6]
-[ext_resource path="res://scenes/RetryMenu.tscn" type="PackedScene" id=7]
-[ext_resource path="res://EnemyController.gd" type="Script" id=8]
-[ext_resource path="res://SpawnController.gd" type="Script" id=9]
-[ext_resource path="res://SpawnSpot.tscn" type="PackedScene" id=10]
-[ext_resource path="res://AttackController.gd" type="Script" id=11]
-[ext_resource path="res://HoldingController.gd" type="Script" id=12]
-[ext_resource path="res://audio/music/Szymon Matuszewski - Space Chase.ogg" type="AudioStream" id=13]
-[ext_resource path="res://scripts/BossController.gd" type="Script" id=14]
+[ext_resource path="res://fonts/xirod_dynamic_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://ScoreLabel.gd" type="Script" id=5]
+[ext_resource path="res://LivesLabel.gd" type="Script" id=6]
+[ext_resource path="res://StageLabel.gd" type="Script" id=7]
+[ext_resource path="res://scenes/RetryMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://EnemyController.gd" type="Script" id=9]
+[ext_resource path="res://SpawnController.gd" type="Script" id=10]
+[ext_resource path="res://SpawnSpot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://AttackController.gd" type="Script" id=12]
+[ext_resource path="res://HoldingController.gd" type="Script" id=13]
+[ext_resource path="res://audio/music/Szymon Matuszewski - Space Chase.ogg" type="AudioStream" id=14]
+[ext_resource path="res://scripts/BossController.gd" type="Script" id=15]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 0, 0.773781 )
@@ -28,95 +29,91 @@ margin_right = 675.0
 margin_bottom = 900.0
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI"]
-margin_top = 839.0
-margin_right = 680.0
-margin_bottom = 899.0
+margin_left = 40.0
+margin_top = 829.226
+margin_right = 675.0
+margin_bottom = 894.226
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer"]
-margin_right = 680.0
+margin_right = 635.0
 margin_bottom = 65.0
 size_flags_horizontal = 3
 custom_constants/separation = 150
 
 [node name="ScoreLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
-margin_top = 25.0
-margin_right = 51.0
-margin_bottom = 39.0
+margin_top = 23.0
+margin_right = 102.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 4 )
 text = "Score: 0"
-script = ExtResource( 4 )
-
-[node name="LivesLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
-margin_left = 201.0
-margin_top = 25.0
-margin_right = 250.0
-margin_bottom = 39.0
-text = "Lives: 3"
 script = ExtResource( 5 )
 
-[node name="StageLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
-margin_left = 400.0
-margin_top = 25.0
-margin_right = 450.0
-margin_bottom = 39.0
-text = "Stage: 1"
+[node name="LivesLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
+margin_left = 252.0
+margin_top = 23.0
+margin_right = 341.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 4 )
+text = "Lives: 3"
 script = ExtResource( 6 )
 
-[node name="GameTipsLabel" type="Label" parent="GUI/MarginContainer"]
-margin_right = 680.0
-margin_bottom = 65.0
-text = "
+[node name="StageLabel" type="Label" parent="GUI/MarginContainer/HBoxContainer"]
+margin_left = 491.0
+margin_top = 23.0
+margin_right = 583.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 4 )
+text = "Stage: 1"
+script = ExtResource( 7 )
 
-
-                     Controls: WASD to move. Press space to shoot. Hold space for powerful shot."
-
-[node name="RetryMenu" parent="GUI" instance=ExtResource( 7 )]
+[node name="RetryMenu" parent="GUI" instance=ExtResource( 8 )]
 
 [node name="EnemyController" type="Node" parent="."]
-script = ExtResource( 8 )
-
-[node name="SpawnController" type="Node" parent="EnemyController"]
 script = ExtResource( 9 )
 
-[node name="SpawnSpotL4" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnController" type="Node" parent="EnemyController"]
+script = ExtResource( 10 )
+
+[node name="SpawnSpotL4" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( -100, 800 )
 
-[node name="SpawnSpotR1" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotR1" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( 800, 788.893 )
 
-[node name="SpawnSpotL2" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotL2" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( -100, 600 )
 
-[node name="SpawnSpotR3" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotR3" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( 800, 588.893 )
 
-[node name="SpawnSpotL3" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotL3" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( -100, 700 )
 
-[node name="SpawnSpotR2" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotR2" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( 800, 688.893 )
 
-[node name="SpawnSpotL1" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotL1" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( -100, 500 )
 
-[node name="SpawnSpotR4" parent="EnemyController/SpawnController" instance=ExtResource( 10 )]
+[node name="SpawnSpotR4" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
 position = Vector2( 800, 488.893 )
 
 [node name="AttackController" type="Node" parent="EnemyController"]
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="HoldingController" type="Node2D" parent="EnemyController"]
 position = Vector2( 50, 50 )
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="HoldingTween" type="Tween" parent="EnemyController/HoldingController"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 337.5, 450 )
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 autoplay = true
 
 [node name="BossController" type="Node" parent="."]
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="FireballContainer" type="Node" parent="."]
 
