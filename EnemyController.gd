@@ -9,7 +9,7 @@ var state = SPAWN
 var counter = 0.0
 var score = 0
 onready var bossController = $"../BossController"
-
+onready var explosion_resource = preload("res://scenes/ExplosionSmall.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	counter += delta
@@ -34,6 +34,9 @@ func _process(delta):
 	#Purge the list of all enemies that have been flagged to be deleted
 	for enemy in enemies:
 		if enemy.destroyed == true:
+			var explosion = explosion_resource.instance()
+			explosion.global_position = enemy.global_position
+			add_child(explosion)
 			enemy.destroy()
 			destroy.append(enemy)
 	for d in destroy:

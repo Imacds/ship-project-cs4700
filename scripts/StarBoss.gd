@@ -10,9 +10,12 @@ onready var spawnpoints = [$FireballSpawnPoint, $FireballSpawnPoint2, $FireballS
 var last_fired = 0
 export (int) var time_between_shots = 1.25
 onready var fireball_resource = preload("res://scenes/Fireball.tscn")
+onready var explosion_resource = preload("res://scenes/Explosion.tscn")
 onready var fireball_container = $"../../FireballContainer"
 
 onready var thing = $"../../EnemyController"
+
+var death_timer = 10.0
 
 func _ready():
     z_index = 1
@@ -20,12 +23,20 @@ func _ready():
 func _on_StarBoss_area_entered(area):
     if "Bullet" in area.get_name():
         hp -= 1 + int(area.charged)
-        $GotHurtAudio.play()
-        if hp <= 0:
-            die()
+        if hp > 0:
+        	$GotHurtAudio.play()
+        if hp <= 0 and death_timer == 10.0:
+            explode()
 
 func _process(delta):
-    shoot(delta)
+	if hp > 0:
+		shoot(delta)
+	else:
+		death_timer -= delta
+	
+	if death_timer <= 0:
+		die()
+		
 
 func shoot(delta):
     last_fired += delta
@@ -49,3 +60,9 @@ func create_fireballs():
         
 func die():
     global.change_scene("main menu", thing.score)
+	
+func explode():
+	for point in spawnpoints:
+		var explosion = explosion_resource.instance()
+		explosion.global_position = point.global_position
+		$FireballContainer.add_child(explosion)

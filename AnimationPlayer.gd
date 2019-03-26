@@ -5,5 +5,4 @@ func _ready():
 	play("idle")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if get_parent().hp > 0:
-		play(anim_name)
+	get_parent().queue_free()

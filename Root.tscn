@@ -73,6 +73,7 @@ script = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="SpawnController" type="Node" parent="EnemyController"]
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="SpawnSpotL4" parent="EnemyController/SpawnController" instance=ExtResource( 11 )]
