@@ -1,34 +1,30 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Background2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/BulletSpawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/ChargedBulletSpawner.tscn" type="PackedScene" id=3]
-[ext_resource path="res://audio/music/Ambient-Loop-isaiah658.ogg" type="AudioStream" id=4]
-[ext_resource path="res://fonts/xirod_dynamic_font_32.tres" type="DynamicFont" id=5]
-[ext_resource path="res://StartCloneGameButton.gd" type="Script" id=6]
-[ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=7]
-[ext_resource path="res://scripts/StartDerivedGameEndless.gd" type="Script" id=8]
-[ext_resource path="res://scripts/QuitButton.gd" type="Script" id=9]
-[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=10]
-[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=11]
-[ext_resource path="res://scripts/ScoreRequiredLabel.gd" type="Script" id=12]
+[ext_resource path="res://scenes/BulletSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ChargedBulletSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/music/Ambient-Loop-isaiah658.ogg" type="AudioStream" id=3]
+[ext_resource path="res://fonts/xirod_dynamic_font_32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://StartCloneGameButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/StartDerivedGameButton.gd" type="Script" id=6]
+[ext_resource path="res://scripts/StartDerivedGameEndless.gd" type="Script" id=7]
+[ext_resource path="res://scripts/QuitButton.gd" type="Script" id=8]
+[ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=10]
+[ext_resource path="res://scripts/ScoreRequiredLabel.gd" type="Script" id=11]
 
 [node name="Node" type="Node"]
 
-[node name="Background2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 337.5, 450 )
-
-[node name="BulletSpawner" parent="." instance=ExtResource( 2 )]
+[node name="BulletSpawner" parent="." instance=ExtResource( 1 )]
 position = Vector2( 60, 930 )
 z_index = 1
 
-[node name="ChargedBulletSpawner" parent="." instance=ExtResource( 3 )]
+[node name="ChargedBulletSpawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( 620, 930 )
 z_index = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 337.5, 450 )
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 autoplay = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -42,85 +38,89 @@ margin_right = 658.479
 margin_bottom = 825.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/MarginContainer"]
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 775.0
-custom_constants/separation = 100
+custom_constants/separation = 500
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 446.0
-margin_bottom = 210.0
 custom_constants/separation = 10
 alignment = 1
 
 [node name="StartCloneGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 45.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "Galaga Clone"
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="StartDerivedGameButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 55.0
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 100.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "Just Ship It - Adventure"
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="StartDerivedGameEndless" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 110.0
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 155.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "Just Ship It - Endless"
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="QuitButton" type="MenuButton" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 165.0
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 210.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "Quit"
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
-[node name="HelpLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2"]
-margin_left = 30.0
-margin_top = 310.0
-margin_right = 735.0
-margin_bottom = 395.0
-custom_fonts/font = ExtResource( 10 )
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 220.0
+margin_right = 641.0
+margin_bottom = 305.0
+
+[node name="Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer2"]
+margin_right = 641.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 9 )
 text = "Controls:
 WASD/Arrow Keys - Move
 Space - Fire
 Hold Space - Charge Super Shot"
 
-[node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2"]
-margin_left = 30.0
-margin_top = 495.0
-margin_right = 735.0
+[node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 315.0
+margin_right = 641.0
 margin_bottom = 446.0
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
-[node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="ScoreRequiredLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/ScoresVBox"]
 margin_right = 641.0
 margin_bottom = 85.0
-custom_fonts/font = ExtResource( 10 )
-text = "Score Required: 500000"
-script = ExtResource( 12 )
+custom_fonts/font = ExtResource( 9 )
+text = "
+Score Required to 
+Unlock Boss in Adventure Mode: 500000
+"
+script = ExtResource( 11 )
 
-[node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="PreviousScoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/ScoresVBox"]
 margin_top = 89.0
 margin_right = 641.0
 margin_bottom = 108.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 9 )
 text = "Previous Score: 0"
 
-[node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/ScoresVBox"]
+[node name="HighscoreLabel" type="Label" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/ScoresVBox"]
 margin_top = 112.0
-margin_right = 735.0
+margin_right = 641.0
 margin_bottom = 131.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 9 )
 text = "High Score: 0"
 
 [connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_QuitButton_pressed"]
