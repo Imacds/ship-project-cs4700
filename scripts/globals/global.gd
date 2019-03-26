@@ -5,8 +5,8 @@ extends Node
 # score #
 var isNotGalagaClone = true
 
-var score_required_to_unlock_boss = 5000
-var score_required_to_unlock_boss_default = score_required_to_unlock_boss
+var score_required_to_unlock_boss = 500000
+var score_required_to_unlock_boss_default = 500000
 var previous_score = 0
 var scores = []
 var highscore = 0
