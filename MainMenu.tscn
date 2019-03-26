@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/BulletSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ChargedBulletSpawner.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://fonts/xirod_dynamic_font_15.tres" type="DynamicFont" id=9]
 [ext_resource path="res://scripts/ScoresVBox.gd" type="Script" id=10]
 [ext_resource path="res://scripts/ScoreRequiredLabel.gd" type="Script" id=11]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=12]
 
 [node name="Node" type="Node"]
 
@@ -122,5 +123,7 @@ margin_right = 641.0
 margin_bottom = 131.0
 custom_fonts/font = ExtResource( 9 )
 text = "High Score: 0"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 12 )]
 
 [connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_QuitButton_pressed"]
