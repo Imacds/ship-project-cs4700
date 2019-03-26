@@ -94,7 +94,7 @@ Space - Fire
 Hold Space - Charge Super Shot"
 
 [node name="ScoresVBox" type="VBoxContainer" parent="MainMenu/MarginContainer/VBoxContainer2/VBoxContainer"]
-margin_top = 315.0
+margin_left = 30.0
 margin_right = 641.0
 margin_bottom = 446.0
 script = ExtResource( 10 )

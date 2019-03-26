@@ -14,7 +14,7 @@ export (float) var invulnerability_time = 2.0
 var charge_counter = 0.0 # duration that the fire button has been held
 var fire_cooldown = 0.0 # time since last fired
 export (float) var time_til_charged = 0.75
-export (float) var time_between_shots = 0.35
+export (float) var time_between_shots = 0.45
 var charged_audio_played = false
 # bullet #
 var bullets_container
@@ -80,12 +80,11 @@ func shoot(delta):
 	if fire_cooldown > 0.0:
 		fire_cooldown -= delta
 	
-	if Input.is_action_just_pressed("shoot") and fire_cooldown <= 0:
-		create_bullet()
-		fire_cooldown = time_between_shots
-		charge_counter = 0.0
+	if Input.is_action_pressed("shoot"):
+		if fire_cooldown <= 0:
+			create_bullet()
+			fire_cooldown = time_between_shots
 		
-	elif Input.is_action_pressed("shoot"):
 		charge_counter += delta
 		if charge_counter >= time_til_charged and not charged_audio_played and global.isNotGalagaClone:
 			charged_audio_played = true
