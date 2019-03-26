@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/StarBoss.gd" type="Script" id=1]
 [ext_resource path="res://scripts/StarBossAnimation.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://audio/sfx/StarBoss/pain6.wav" type="AudioStream" id=15]
 [ext_resource path="res://audio/sfx/StarBoss/painh.wav" type="AudioStream" id=16]
 [ext_resource path="res://audio/sfx/StarBoss/paino.wav" type="AudioStream" id=17]
+[ext_resource path="res://fonts/xirod_dynamic_font_32.tres" type="DynamicFont" id=18]
+[ext_resource path="res://scenes/Label.gd" type="Script" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "StarBoss"
@@ -162,6 +164,15 @@ stream = ExtResource( 16 )
 position = Vector2( 340, 0 )
 rotation = 1.74846e-007
 stream = ExtResource( 17 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -50.0
+margin_top = 250.0
+custom_fonts/font = ExtResource( 18 )
+text = "HP: 90"
+align = 1
+valign = 1
+script = ExtResource( 19 )
 
 [connection signal="area_entered" from="." to="." method="_on_StarBoss_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_AnimationPlayer_animation_finished"]

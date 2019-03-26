@@ -10,7 +10,7 @@ var spawnSpotsRight = []
 
 var spotCounter = 0
 var sideCounter = 0
-var wave = 14
+var wave = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,7 +35,7 @@ func spawnRandom():
 	#Tell it to spawn 5 enemies
 	var enemies = []
 	var curves = []
-	for i in range(0, wave+5):
+	for i in range(0, wave+21):
 		enemies.append(Enemy1)
 		curves.append(Curve1)
 	spot.bufferEnemies(enemies, curves)
