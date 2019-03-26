@@ -12,6 +12,9 @@ Imported assets
 | audio | Ambient - Loop - isaiah658 | isaiah658 | https://opengameart.org/content/ambient-relaxing-loop | main menu music |
 | audio | N-Dimensions (Main Theme) | Matthew Pablo | https://opengameart.org/content/space-dimensions-techno-version | boss music |
 | audio | Szymon Matuszewski - Space Chase | Szymon Matuszewski | https://opengameart.org/content/szymon-matuszewski-space-chase | normal enemy fighting music |
+| audio | Explosion Ultra Bass Sound | Mark DiAngelo  | http://soundbible.com/1807-Explosion-Ultra-Bass.html | boss death sfx
+| audio | Blast Sound | Mike Koenig | http://soundbible.com/538-Blast.html | enemy death sfx
+| sprite | 2D Explosion Animations | Sinestesia | https://opengameart.org/content/2d-explosion-animations-frame-by-frame | explosion sfx
 | sprite | Space Starter Kit | CruzR | https://opengameart.org/content/space-starter-kit | ship, enemies, laser shots |
 | sprite | sss (Star-Vector) | galangpiliang | https://opengameart.org/content/star-vector | boss |
 | sprite | fireball | djantosh10 | https://opengameart.org/content/fireballs | boss fireball |

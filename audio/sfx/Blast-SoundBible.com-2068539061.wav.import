@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Blast-SoundBible.com-2068539061.wav-1cd68513fac6492ee36886fa329c2bc7.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Blast-SoundBible.com-2068539061.wav"
+dest_files=[ "res://.import/Blast-SoundBible.com-2068539061.wav-1cd68513fac6492ee36886fa329c2bc7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
