@@ -13,7 +13,7 @@ export (float) var invulnerability_time = 2.0
 # shooting #
 var charge_counter = 0.0 # duration that the fire button has been held
 var fire_cooldown = 0.0 # time since last fired
-export (float) var time_til_charged = 0.75
+export (float) var time_til_charged = 1.0
 export (float) var time_between_shots = 0.45
 var charged_audio_played = false
 # bullet #
@@ -80,21 +80,22 @@ func shoot(delta):
 	if fire_cooldown > 0.0:
 		fire_cooldown -= delta
 	
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and charge_counter >= time_til_charged and global.isNotGalagaClone:
+		create_bullet(true)
+		fire_cooldown = 0.0
+		charge_counter = 0.0
+		charged_audio_played = false
+	elif Input.is_action_pressed("shoot"):
+		charge_counter = 0.0
 		if fire_cooldown <= 0:
 			create_bullet()
 			fire_cooldown = time_between_shots
-		
+	else:
 		charge_counter += delta
 		if charge_counter >= time_til_charged and not charged_audio_played and global.isNotGalagaClone:
 			charged_audio_played = true
 			$ShipIsChargedAudio.play()
 
-	elif Input.is_action_just_released("shoot") and charge_counter >= time_til_charged and global.isNotGalagaClone:
-		create_bullet(true)
-		fire_cooldown = 0.0
-		charge_counter = 0.0
-		charged_audio_played = false
 
 func create_bullet(charged = false):
 	# create the instance of the bullet & change its pos

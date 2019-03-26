@@ -62,6 +62,7 @@ func die():
     global.change_scene("main menu", thing.score)
 	
 func explode():
+	thing.score += 100000
 	for point in spawnpoints:
 		var explosion = explosion_resource.instance()
 		explosion.global_position = point.global_position
